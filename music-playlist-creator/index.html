@@ -1,27 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Music Playlist Explorer</title>
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-    
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <!-- Your header content here -->
-    </header>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Music Playlist Explorer</title>
+		<link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<div class="modal">
+			<div class="modal-content">
+				<div class="modal-header">
+					<img src="assets/img/playlist.png" />
+					<div class="modal-header-text-wrapper">
+						<h3>Playlist Title</h3>
+						<p>Playlist Author</p>
+					</div>
+				</div>
+				<div class="song-card-wrapper">
+					<div class="song-card">
+						<img src="assets/img/song.png" />
+						<div class="song-card-text">
+							<h4>Song Title</h4>
+							<p>Artist Name</p>
+							<p>Album Name</p>
+						</div>
+					</div>
 
-    <main> 
-        <!-- Your main content here -->
-    </main>
+					<div class="song-card">
+						<img src="assets/img/song.png" />
+						<div class="song-card-text">
+							<h4>Song Title</h4>
+							<p>Artist Name</p>
+							<p>Album Name</p>
+						</div>
+					</div>
+					<div class="song-card">
+						<img src="assets/img/song.png" />
+						<div class="song-card-text">
+							<h4>Song Title</h4>
+							<p>Artist Name</p>
+							<p>Album Name</p>
+						</div>
+					</div>
+					<div class="song-card">
+						<img src="assets/img/song.png" />
+						<div class="song-card-text">
+							<h4>Song Title</h4>
+							<p>Artist Name</p>
+							<p>Album Name</p>
+						</div>
+					</div>
+					<div class="song-card">
+						<img src="assets/img/song.png" />
+						<div class="song-card-text">
+							<h4>Song Title</h4>
+							<p>Artist Name</p>
+							<p>Album Name</p>
+						</div>
+					</div>
+					<div class="song-card">
+						<img src="assets/img/song.png" />
+						<div class="song-card-text">
+							<h4>Song Title</h4>
+							<p>Artist Name</p>
+							<p>Album Name</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>		<header>
+			<h1>Music Playlist Explorer</h1>
+		</header>
+		<main class="container" id="playlist-container">
+			<!-- Playlist cards will be dynamically inserted here -->
+			<div id="no-playlists-message" style="display: none; width: 100%; text-align: center; padding: 20px;">
+				<h3>No playlists added</h3>
+				<p>Start creating your music collection!</p>
+			</div>
+		</main>
 
-    <footer>
-        <!-- Your footer content here -->
-    </footer>
-    <script src="data/data.js"></script>
-    <script src="script.js"></script>
-</body>
+		<footer></footer>
+		<script src="data/data.js"></script>
+		<script src="script.js"></script>
+	</body>
 </html>

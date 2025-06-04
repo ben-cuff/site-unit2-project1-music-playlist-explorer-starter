@@ -1,0 +1,209 @@
+const playlists = [
+	{
+		"playlistID": 1,
+		"playlist_name": "90's Rock Classics",
+		"playlist_author": "John Smith",
+		"playlist_art": "https://th.bing.com/th/id/OIP.xtOhoatSMa5zdAvZoREPUwHaE8?w=262&h=180&c=7&r=0&o=5&pid=1.7",
+		"likes": 123,
+		"songs": [
+			{
+				"title": "Smells Like Teen Spirit",
+				"artist": "Nirvana",
+				"album": "Nevermind"
+			},
+			{
+				"title": "Wonderwall",
+				"artist": "Oasis",
+				"album": "What's the Story Morning Glory?"
+			},
+			{
+				"title": "Creep",
+				"artist": "Radiohead",
+				"album": "Pablo Honey"
+			},
+			{
+				"title": "Black Hole Sun",
+				"artist": "Soundgarden",
+				"album": "Superunknown"
+			},
+			{
+				"title": "Enter Sandman",
+				"artist": "Metallica",
+				"album": "Metallica (The Black Album)"
+			}
+		]
+	},
+	{
+		"playlistID": 2,
+		"playlist_name": "90's Alt-Rock",
+		"playlist_author": "Jane Doe",
+		"playlist_art": "https://th.bing.com/th/id/OIP.xtOhoatSMa5zdAvZoREPUwHaE8?w=262&h=180&c=7&r=0&o=5&pid=1.7",
+		"likes": 89,
+		"songs": [
+			{
+				"title": "Losing My Religion",
+				"artist": "R.E.M.",
+				"album": "Out of Time"
+			},
+			{
+				"title": "No Rain",
+				"artist": "Blind Melon",
+				"album": "Blind Melon"
+			},
+			{
+				"title": "Zombie",
+				"artist": "The Cranberries",
+				"album": "No Need to Argue"
+			},
+			{
+				"title": "Bitter Sweet Symphony",
+				"artist": "The Verve",
+				"album": "Urban Hymns"
+			},
+			{
+				"title": "Semi-Charmed Life",
+				"artist": "Third Eye Blind",
+				"album": "Third Eye Blind"
+			}
+		]
+	},
+	{
+		"playlistID": 3,
+		"playlist_name": "Britpop Hits",
+		"playlist_author": "Alice Johnson",
+		"playlist_art": "https://th.bing.com/th/id/OIP.xtOhoatSMa5zdAvZoREPUwHaE8?w=262&h=180&c=7&r=0&o=5&pid=1.7",
+		"likes": 74,
+		"songs": [
+			{
+				"title": "Parklife",
+				"artist": "Blur",
+				"album": "Parklife"
+			},
+			{
+				"title": "Champagne Supernova",
+				"artist": "Oasis",
+				"album": "(What's the Story) Morning Glory?"
+			},
+			{
+				"title": "Bittersweet Symphony",
+				"artist": "The Verve",
+				"album": "Urban Hymns"
+			},
+			{
+				"title": "Common People",
+				"artist": "Pulp",
+				"album": "Different Class"
+			},
+			{
+				"title": "Song 2",
+				"artist": "Blur",
+				"album": "Blur"
+			}
+		]
+	},
+	{
+		"playlistID": 4,
+		"playlist_name": "Indie Rock Essentials",
+		"playlist_author": "Bob Brown",
+		"playlist_art": "https://th.bing.com/th/id/OIP.xtOhoatSMa5zdAvZoREPUwHaE8?w=262&h=180&c=7&r=0&o=5&pid=1.7",
+		"likes": 102,
+		"songs": [
+			{
+				"title": "Take Me Out",
+				"artist": "Franz Ferdinand",
+				"album": "Franz Ferdinand"
+			},
+			{
+				"title": "Last Nite",
+				"artist": "The Strokes",
+				"album": "Is This It"
+			},
+			{
+				"title": "Reptilia",
+				"artist": "The Strokes",
+				"album": "First Impressions of Earth"
+			},
+			{
+				"title": "Seven Nation Army",
+				"artist": "The White Stripes",
+				"album": "Elephant"
+			},
+			{
+				"title": "Float On",
+				"artist": "Modest Mouse",
+				"album": "Good News for People Who Love Bad News"
+			}
+		]
+	},
+	{
+		"playlistID": 5,
+		"playlist_name": "Folk Classics",
+		"playlist_author": "Emily White",
+		"playlist_art": "https://th.bing.com/th/id/OIP.xtOhoatSMa5zdAvZoREPUwHaE8?w=262&h=180&c=7&r=0&o=5&pid=1.7",
+		"likes": 67,
+		"songs": [
+			{
+				"title": "Scarborough Fair",
+				"artist": "Simon & Garfunkel",
+				"album": "Parsley, Sage, Rosemary and Thyme"
+			},
+			{
+				"title": "The Times They Are A-Changin'",
+				"artist": "Bob Dylan",
+				"album": "The Times They Are A-Changin'"
+			},
+			{
+				"title": "Blackbird",
+				"artist": "The Beatles",
+				"album": "The Beatles (The White Album)"
+			},
+			{
+				"title": "Fast Car",
+				"artist": "Tracy Chapman",
+				"album": "Tracy Chapman"
+			},
+			{
+				"title": "Landslide",
+				"artist": "Fleetwood Mac",
+				"album": "Fleetwood Mac"
+			}
+		]
+	},
+	{
+		"playlistID": 6,
+		"playlist_name": "Soundtrack Favorites",
+		"playlist_author": "Charlie Green",
+		"playlist_art": "https://th.bing.com/th/id/OIP.xtOhoatSMa5zdAvZoREPUwHaE8?w=262&h=180&c=7&r=0&o=5&pid=1.7",
+		"likes": 91,
+		"songs": [
+			{
+				"title": "Time of My Life",
+				"artist": "Bill Medley & Jennifer Warnes",
+				"album": "Dirty Dancing Soundtrack"
+			},
+			{
+				"title": "My Heart Will Go On",
+				"artist": "Celine Dion",
+				"album": "Titanic Soundtrack"
+			},
+			{
+				"title": "Eye of the Tiger",
+				"artist": "Survivor",
+				"album": "Rocky III Soundtrack"
+			},
+			{
+				"title": "Lose Yourself",
+				"artist": "Eminem",
+				"album": "8 Mile Soundtrack"
+			},
+			{
+				"title": "A Whole New World",
+				"artist": "Peabo Bryson & Regina Belle",
+				"album": "Aladdin Soundtrack"
+			}
+		]
+	}
+];
+
+// Making the playlists available globally
+const data = { playlists };
