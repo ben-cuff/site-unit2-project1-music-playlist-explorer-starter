@@ -3,7 +3,8 @@
 		"playlistID": 1,
 		"playlist_name": "90's Rock Classics",
 		"playlist_author": "John Smith",
-		"playlist_art": "https://th.bing.com/th/id/OIP.xtOhoatSMa5zdAvZoREPUwHaE8?w=262&h=180&c=7&r=0&o=5&pid=1.7",
+		"playlist_art": "assets/img/playlist.png",
+		"likes": 150,
 		"songs": [
 			{
 				"title": "Smells Like Teen Spirit",
@@ -36,7 +37,8 @@
 		"playlistID": 2,
 		"playlist_name": "90's Alt-Rock",
 		"playlist_author": "Jane Doe",
-		"playlist_art": "https://th.bing.com/th/id/OIP.xtOhoatSMa5zdAvZoREPUwHaE8?w=262&h=180&c=7&r=0&o=5&pid=1.7",
+		"playlist_art": "assets/img/playlist.png",
+		"likes": 120,
 		"songs": [
 			{
 				"title": "Losing My Religion",
@@ -69,7 +71,8 @@
 		"playlistID": 3,
 		"playlist_name": "Britpop Hits",
 		"playlist_author": "Alice Johnson",
-		"playlist_art": "https://th.bing.com/th/id/OIP.xtOhoatSMa5zdAvZoREPUwHaE8?w=262&h=180&c=7&r=0&o=5&pid=1.7",
+		"playlist_art": "assets/img/playlist.png",
+		"likes": 200,
 		"songs": [
 			{
 				"title": "Parklife",
@@ -102,7 +105,8 @@
 		"playlistID": 4,
 		"playlist_name": "Indie Rock Essentials",
 		"playlist_author": "Bob Brown",
-		"playlist_art": "https://th.bing.com/th/id/OIP.xtOhoatSMa5zdAvZoREPUwHaE8?w=262&h=180&c=7&r=0&o=5&pid=1.7",
+		"playlist_art": "assets/img/playlist.png",
+		"likes": 200,
 		"songs": [
 			{
 				"title": "Take Me Out",
@@ -135,7 +139,8 @@
 		"playlistID": 5,
 		"playlist_name": "Folk Classics",
 		"playlist_author": "Emily White",
-		"playlist_art": "https://th.bing.com/th/id/OIP.xtOhoatSMa5zdAvZoREPUwHaE8?w=262&h=180&c=7&r=0&o=5&pid=1.7",
+		"playlist_art": "assets/img/playlist.png",
+		"likes": 3,
 		"songs": [
 			{
 				"title": "Scarborough Fair",
@@ -168,7 +173,8 @@
 		"playlistID": 6,
 		"playlist_name": "Soundtrack Favorites",
 		"playlist_author": "Charlie Green",
-		"playlist_art": "https://th.bing.com/th/id/OIP.xtOhoatSMa5zdAvZoREPUwHaE8?w=262&h=180&c=7&r=0&o=5&pid=1.7",
+		"playlist_art": "assets/img/playlist.png",
+		"likes": 1020,
 		"songs": [
 			{
 				"title": "Time of My Life",
