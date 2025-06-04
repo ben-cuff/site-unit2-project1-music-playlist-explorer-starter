@@ -39,16 +39,22 @@ function renderPlaylists() {
 
 		const likeButton = document.createElement("button");
 		likeButton.id = `like-button-${playlist.playlistID}`;
-		likeButton.textContent = `Likes: ${playlist.likes}`;
-		likeButton.setAttribute("data-liked", "false");
+		likeButton.dataset.liked = "false";
+
+		const likeCountSpan = document.createElement("span");
+		likeCountSpan.classList.add("like-count");
+		likeCountSpan.textContent = `Likes: ${playlist.likes}`;
+
+		likeButton.appendChild(likeCountSpan);
 		likeButton.addEventListener("click", (event) => {
-			toggleLike(event);
+			event.stopPropagation();
+			toggleLike(event, playlist.playlistID);
 		});
 
 		const likeIcon = document.createElement("img");
-		likeIcon.src = likeButton.getAttribute("data-liked")
-			? "assets/img/heart.svg"
-			: "assets/img/heart-outline.svg";
+		likeIcon.src = "assets/img/heart-outline.svg";
+		likeIcon.className = "like-icon";
+		likeIcon.id = "like-icon-" + playlist.playlistID;
 		likeButton.appendChild(likeIcon);
 
 		playlistDivElement.appendChild(likeButton);
@@ -61,18 +67,20 @@ function renderPlaylists() {
 	});
 }
 
-function toggleLike(event) {
-	const isLiked = event.target.getAttribute("data-liked") === "true";
+function toggleLike(event, id) {
+	const button = event.currentTarget;
+	const likeCountSpan = button.querySelector(".like-count");
+	const currentLikes = parseInt(likeCountSpan.textContent.split(": ")[1]);
+	const isLiked = button.getAttribute("data-liked") === "true";
 	if (isLiked) {
-		event.target.setAttribute("data-liked", "false");
-		event.target.textContent = `Likes: ${
-			parseInt(event.target.textContent.split(": ")[1]) - 1
-		}`;
+		button.setAttribute("data-liked", "false");
+		likeCountSpan.textContent = `Likes: ${currentLikes - 1}`;
+		document.getElementById("like-icon-" + id).src =
+			"assets/img/heart-outline.svg";
 	} else {
-		event.target.setAttribute("data-liked", "true");
-		event.target.textContent = `Likes: ${
-			parseInt(event.target.textContent.split(": ")[1]) + 1
-		}`;
+		button.setAttribute("data-liked", "true");
+		likeCountSpan.textContent = `Likes: ${currentLikes + 1}`;
+		document.getElementById("like-icon-" + id).src = "assets/img/heart.svg";
 	}
 }
 

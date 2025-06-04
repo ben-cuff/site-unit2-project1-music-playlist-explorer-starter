@@ -130,3 +130,10 @@ img {
 	font-size: 0.8em;
 	color: #555;
 }
+
+.like-icon {
+	cursor: pointer;
+	width: 20px;
+	height: 20px;
+	margin-left: auto;
+}
