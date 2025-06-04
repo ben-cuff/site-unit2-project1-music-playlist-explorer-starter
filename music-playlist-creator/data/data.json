@@ -3,33 +3,38 @@
 		"playlistID": 1,
 		"playlist_name": "90's Rock Classics",
 		"playlist_author": "John Smith",
-		"playlist_art": "assets/img/playlist.png",
+		"playlist_art": "",
 		"likes": 150,
 		"songs": [
 			{
 				"title": "Smells Like Teen Spirit",
 				"artist": "Nirvana",
-				"album": "Nevermind"
+				"album": "Nevermind",
+				"duration": "5:01"
 			},
 			{
 				"title": "Wonderwall",
 				"artist": "Oasis",
-				"album": "What's the Story Morning Glory?"
+				"album": "What's the Story Morning Glory?",
+				"duration": "4:18"
 			},
 			{
 				"title": "Creep",
 				"artist": "Radiohead",
-				"album": "Pablo Honey"
+				"album": "Pablo Honey",
+				"duration": "3:57"
 			},
 			{
 				"title": "Black Hole Sun",
 				"artist": "Soundgarden",
-				"album": "Superunknown"
+				"album": "Superunknown",
+				"duration": "5:18"
 			},
 			{
 				"title": "Enter Sandman",
 				"artist": "Metallica",
-				"album": "Metallica (The Black Album)"
+				"album": "Metallica (The Black Album)",
+				"duration": "5:32"
 			}
 		]
 	},
@@ -37,33 +42,38 @@
 		"playlistID": 2,
 		"playlist_name": "90's Alt-Rock",
 		"playlist_author": "Jane Doe",
-		"playlist_art": "assets/img/playlist.png",
+		"playlist_art": "",
 		"likes": 120,
 		"songs": [
 			{
 				"title": "Losing My Religion",
 				"artist": "R.E.M.",
-				"album": "Out of Time"
+				"album": "Out of Time",
+				"duration": "4:28"
 			},
 			{
 				"title": "No Rain",
 				"artist": "Blind Melon",
-				"album": "Blind Melon"
+				"album": "Blind Melon",
+				"duration": "4:00"
 			},
 			{
 				"title": "Zombie",
 				"artist": "The Cranberries",
-				"album": "No Need to Argue"
+				"album": "No Need to Argue",
+				"duration": "5:06"
 			},
 			{
 				"title": "Bitter Sweet Symphony",
 				"artist": "The Verve",
-				"album": "Urban Hymns"
+				"album": "Urban Hymns",
+				"duration": "5:58"
 			},
 			{
 				"title": "Semi-Charmed Life",
 				"artist": "Third Eye Blind",
-				"album": "Third Eye Blind"
+				"album": "Third Eye Blind",
+				"duration": "4:30"
 			}
 		]
 	},
@@ -71,33 +81,38 @@
 		"playlistID": 3,
 		"playlist_name": "Britpop Hits",
 		"playlist_author": "Alice Johnson",
-		"playlist_art": "assets/img/playlist.png",
+		"playlist_art": "",
 		"likes": 200,
 		"songs": [
 			{
 				"title": "Parklife",
 				"artist": "Blur",
-				"album": "Parklife"
+				"album": "Parklife",
+				"duration": "5:29"
 			},
 			{
 				"title": "Champagne Supernova",
 				"artist": "Oasis",
-				"album": "(What's the Story) Morning Glory?"
+				"album": "(What's the Story) Morning Glory?",
+				"duration": "7:26"
 			},
 			{
 				"title": "Bittersweet Symphony",
 				"artist": "The Verve",
-				"album": "Urban Hymns"
+				"album": "Urban Hymns",
+				"duration": "5:55"
 			},
 			{
 				"title": "Common People",
 				"artist": "Pulp",
-				"album": "Different Class"
+				"album": "Different Class",
+				"duration": "5:14"
 			},
 			{
 				"title": "Song 2",
 				"artist": "Blur",
-				"album": "Blur"
+				"album": "Blur",
+				"duration": "2:02"
 			}
 		]
 	},
@@ -105,33 +120,38 @@
 		"playlistID": 4,
 		"playlist_name": "Indie Rock Essentials",
 		"playlist_author": "Bob Brown",
-		"playlist_art": "assets/img/playlist.png",
+		"playlist_art": "",
 		"likes": 200,
 		"songs": [
 			{
 				"title": "Take Me Out",
 				"artist": "Franz Ferdinand",
-				"album": "Franz Ferdinand"
+				"album": "Franz Ferdinand",
+				"duration": "3:57"
 			},
 			{
 				"title": "Last Nite",
 				"artist": "The Strokes",
-				"album": "Is This It"
+				"album": "Is This It",
+				"duration": "3:13"
 			},
 			{
 				"title": "Reptilia",
 				"artist": "The Strokes",
-				"album": "First Impressions of Earth"
+				"album": "First Impressions of Earth",
+				"duration": "3:43"
 			},
 			{
 				"title": "Seven Nation Army",
 				"artist": "The White Stripes",
-				"album": "Elephant"
+				"album": "Elephant",
+				"duration": "3:52"
 			},
 			{
 				"title": "Float On",
 				"artist": "Modest Mouse",
-				"album": "Good News for People Who Love Bad News"
+				"album": "Good News for People Who Love Bad News",
+				"duration": "3:28"
 			}
 		]
 	},
@@ -139,33 +159,38 @@
 		"playlistID": 5,
 		"playlist_name": "Folk Classics",
 		"playlist_author": "Emily White",
-		"playlist_art": "assets/img/playlist.png",
+		"playlist_art": "",
 		"likes": 3,
 		"songs": [
 			{
 				"title": "Scarborough Fair",
 				"artist": "Simon & Garfunkel",
-				"album": "Parsley, Sage, Rosemary and Thyme"
+				"album": "Parsley, Sage, Rosemary and Thyme",
+				"duration": "2:45"
 			},
 			{
 				"title": "The Times They Are A-Changin'",
 				"artist": "Bob Dylan",
-				"album": "The Times They Are A-Changin'"
+				"album": "The Times They Are A-Changin'",
+				"duration": "3:15"
 			},
 			{
 				"title": "Blackbird",
 				"artist": "The Beatles",
-				"album": "The Beatles (The White Album)"
+				"album": "The Beatles (The White Album)",
+				"duration": "2:18"
 			},
 			{
 				"title": "Fast Car",
 				"artist": "Tracy Chapman",
-				"album": "Tracy Chapman"
+				"album": "Tracy Chapman",
+				"duration": "4:58"
 			},
 			{
 				"title": "Landslide",
 				"artist": "Fleetwood Mac",
-				"album": "Fleetwood Mac"
+				"album": "Fleetwood Mac",
+				"duration": "3:19"
 			}
 		]
 	},
@@ -173,33 +198,38 @@
 		"playlistID": 6,
 		"playlist_name": "Soundtrack Favorites",
 		"playlist_author": "Charlie Green",
-		"playlist_art": "assets/img/playlist.png",
+		"playlist_art": "",
 		"likes": 1020,
 		"songs": [
 			{
 				"title": "Time of My Life",
 				"artist": "Bill Medley & Jennifer Warnes",
-				"album": "Dirty Dancing Soundtrack"
+				"album": "Dirty Dancing Soundtrack",
+				"duration": "4:45"
 			},
 			{
 				"title": "My Heart Will Go On",
 				"artist": "Celine Dion",
-				"album": "Titanic Soundtrack"
+				"album": "Titanic Soundtrack",
+				"duration": "4:40"
 			},
 			{
 				"title": "Eye of the Tiger",
 				"artist": "Survivor",
-				"album": "Rocky III Soundtrack"
+				"album": "Rocky III Soundtrack",
+				"duration": "4:05"
 			},
 			{
 				"title": "Lose Yourself",
 				"artist": "Eminem",
-				"album": "8 Mile Soundtrack"
+				"album": "8 Mile Soundtrack",
+				"duration": "5:26"
 			},
 			{
 				"title": "A Whole New World",
 				"artist": "Peabo Bryson & Regina Belle",
-				"album": "Aladdin Soundtrack"
+				"album": "Aladdin Soundtrack",
+				"duration": "4:00"
 			}
 		]
 	}
