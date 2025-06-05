@@ -126,10 +126,10 @@ img {
 .song-card {
 	display: flex;
 	margin-bottom: 10px;
-	border: 1px solid gray;
 	width: 30%;
 	margin-right: 1%;
 	padding: 8px;
+	background-color: lightgray;
 	border-radius: 5px;
 }
 
