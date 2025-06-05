@@ -3,7 +3,7 @@
 		"playlistID": 1,
 		"playlist_name": "90's Rock Classics",
 		"playlist_author": "John Smith",
-		"playlist_art": "",
+		"playlist_art": "https://picsum.photos/301",
 		"likes": 150,
 		"playlist_date": "2023-01-15",
 		"songs": [
@@ -43,7 +43,7 @@
 		"playlistID": 2,
 		"playlist_name": "90's Alt-Rock",
 		"playlist_author": "Jane Doe",
-		"playlist_art": "",
+		"playlist_art": "https://picsum.photos/300",
 		"likes": 120,
 		"songs": [
 			{
@@ -82,7 +82,7 @@
 		"playlistID": 3,
 		"playlist_name": "Britpop Hits",
 		"playlist_author": "Alice Johnson",
-		"playlist_art": "",
+		"playlist_art": "https://picsum.photos/302",
 		"likes": 200,
 		"playlist_date": "2023-02-10",
 		"songs": [
@@ -122,7 +122,8 @@
 		"playlistID": 4,
 		"playlist_name": "Indie Rock Essentials",
 		"playlist_author": "Bob Brown",
-		"playlist_art": "",
+		"playlist_art": "https://picsum.photos/303",
+		"playlist_date": "2023-02-20",
 		"likes": 200,
 		"songs": [
 			{
@@ -161,7 +162,7 @@
 		"playlistID": 5,
 		"playlist_name": "Folk Classics",
 		"playlist_author": "Emily White",
-		"playlist_art": "",
+		"playlist_art": "https://picsum.photos/304",
 		"likes": 3,
 		"playlist_date": "2023-03-05",
 		"songs": [
@@ -201,7 +202,7 @@
 		"playlistID": 6,
 		"playlist_name": "Soundtrack Favorites",
 		"playlist_author": "Charlie Green",
-		"playlist_art": "",
+		"playlist_art": "https://picsum.photos/305",
 		"likes": 1020,
 		"playlist_date": "2023-04-20",
 		"songs": [
