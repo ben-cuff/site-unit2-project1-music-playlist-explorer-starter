@@ -14,29 +14,28 @@ function loadPlaylistsFromFile() {
 		});
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-	document
-		.getElementById("sort-select")
-		.addEventListener("change", (event) => {
-			const sortBy = event.target.value;
-			if (sortBy === "name") {
-				playlistData.sort((a, b) =>
-					a.playlist_name.localeCompare(b.playlist_name)
-				);
-			} else if (sortBy === "date") {
-				playlistData.sort(
-					(a, b) =>
-						new Date(b.playlist_date) - new Date(a.playlist_date)
-				);
-			} else if (sortBy === "likes") {
-				playlistData.sort((a, b) => b.likes - a.likes);
-			} else {
-				loadPlaylistsFromFile();
-				return;
-			}
-			renderPlaylists();
-		});
+function setupSortSelect() {
+	document.getElementById("sort-select").addEventListener("change", (event) => {
+		const sortBy = event.target.value;
+		if (sortBy === "name") {
+			playlistData.sort((a, b) =>
+				a.playlist_name.localeCompare(b.playlist_name)
+			);
+		} else if (sortBy === "date") {
+			playlistData.sort(
+				(a, b) => new Date(b.playlist_date) - new Date(a.playlist_date)
+			);
+		} else if (sortBy === "likes") {
+			playlistData.sort((a, b) => b.likes - a.likes);
+		} else {
+			loadPlaylistsFromFile();
+			return;
+		}
+		renderPlaylists();
+	});
+}
 
+function setupSearch() {
 	document.getElementById("search-btn").addEventListener("click", (event) => {
 		event.preventDefault();
 		const searchInput = document
@@ -49,26 +48,31 @@ document.addEventListener("DOMContentLoaded", () => {
 				playlist.playlist_name.toLowerCase().includes(searchInput)
 			);
 		} else if (filterType === "author") {
-			playlistData = playlistData.filter((playlist) => {
-				return playlist.playlist_author
-					.toLowerCase()
-					.includes(searchInput);
-			});
+			playlistData = playlistData.filter((playlist) =>
+				playlist.playlist_author.toLowerCase().includes(searchInput)
+			);
 		}
 		renderPlaylists();
 	});
+}
 
-	document
-		.getElementById("clear-search-btn")
-		.addEventListener("click", (event) => {
-			event.preventDefault();
-			document.getElementById("search-input").value = "";
-			document.getElementById("search-filter").value = "name";
-			loadPlaylistsFromFile();
-		});
+function setupClearSearch() {
+	document.getElementById("clear-search-btn").addEventListener("click", (event) => {
+		event.preventDefault();
+		document.getElementById("search-input").value = "";
+		document.getElementById("search-filter").value = "name";
+		loadPlaylistsFromFile();
+	});
+}
 
+function initApp() {
+	setupSortSelect();
+	setupSearch();
+	setupClearSearch();
 	loadPlaylistsFromFile();
-});
+}
+
+document.addEventListener("DOMContentLoaded", initApp);
 
 function renderPlaylists() {
 	const playlistContainer = document.getElementById("playlist-container");
@@ -284,7 +288,7 @@ document.getElementById("add-song-btn").addEventListener("click", () => {
 
 document.getElementById("playlist-form").addEventListener("submit", (event) => {
 	event.preventDefault();
-
+	
 	const playlistName = document.getElementById("playlist-name").value.trim();
 	const playlistAuthor = document
 		.getElementById("playlist-author")
@@ -299,8 +303,10 @@ document.getElementById("playlist-form").addEventListener("submit", (event) => {
 	const songArtistInputs = document.querySelectorAll(
 		'input[name="song-artist[]"]'
 	);
+
 	const songs = [];
 
+	// adds the songs to the songs array
 	songTitleInputs.forEach((input, index) => {
 		const title = input.value.trim();
 		const artist = songArtistInputs[index].value.trim();
@@ -339,25 +345,20 @@ function createEditForm(playlist) {
 	const editForm = document.createElement("form");
 	editForm.classList.add("edit-form");
 	editForm.innerHTML = `
-		<label for="edit-playlist-name">Playlist Name:</label>
 		<input type="text" id="edit-playlist-name" value="${playlist.playlist_name}" required>
-		<label for="edit-playlist-author">Author:</label>
 		<input type="text" id="edit-playlist-author" value="${playlist.playlist_author}" required>
-		<label for="edit-playlist-image">Image URL:</label>
 		<input type="text" id="edit-playlist-image" value="${playlist.playlist_art}">
-		<button type="submit">Save</button>
+		<button type="submit" class="edit-button">Save</button>
 	`;
 
 	const songsContainer = document.createElement("div");
 	songsContainer.classList.add("edit-songs-container");
 
+	// Create a div for each song in the playlist
+	// and add inputs for title and artist
 	playlist.songs.forEach((song) => {
 		const songDiv = document.createElement("div");
 		songDiv.classList.add("edit-song-group");
-
-		const songTitleLabel = document.createElement("label");
-		songTitleLabel.textContent = "Song Title:";
-		songDiv.appendChild(songTitleLabel);
 
 		const songTitleInput = document.createElement("input");
 		songTitleInput.type = "text";
@@ -365,10 +366,6 @@ function createEditForm(playlist) {
 		songTitleInput.value = song.title;
 		songTitleInput.required = true;
 		songDiv.appendChild(songTitleInput);
-
-		const songArtistLabel = document.createElement("label");
-		songArtistLabel.textContent = "Artist:";
-		songDiv.appendChild(songArtistLabel);
 
 		const songArtistInput = document.createElement("input");
 		songArtistInput.type = "text";
@@ -393,12 +390,17 @@ function createEditForm(playlist) {
 			"edit-playlist-image"
 		).value;
 
+		// get all title and artist inputs from the edit form
 		const titleInputs = editForm.querySelectorAll(
 			'input[name="edit-song-title[]"]'
 		);
+
+		// get all artist inputs from the edit form
 		const artistInputs = editForm.querySelectorAll(
 			'input[name="edit-song-artist[]"]'
 		);
+
+		// updates songs array with new values
 		playlist.songs = [];
 		titleInputs.forEach((input, index) => {
 			const title = input.value.trim();
@@ -412,6 +414,7 @@ function createEditForm(playlist) {
 			});
 		});
 
+		// re-renders the playlists and modal
 		renderPlaylists();
 	});
 

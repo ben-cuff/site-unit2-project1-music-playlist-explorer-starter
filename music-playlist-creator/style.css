@@ -187,3 +187,16 @@ img {
 	background-color: white;
 	font-size: 20px;
 }
+
+.edit-button {
+	cursor: pointer;
+	margin-left: 10px;
+}
+
+.shuffle-button {
+	cursor: pointer;
+}
+
+.edit-button {
+	cursor: pointer;
+}
