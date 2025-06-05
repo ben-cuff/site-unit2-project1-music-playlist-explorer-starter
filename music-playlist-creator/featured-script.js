@@ -19,19 +19,20 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function renderPlaylist() {
-    const playlistContainer = document.getElementById("featured-container");
+	const playlistContainer = document.getElementById("featured-container");
 
 	// picks a random playlist from the playlistData array
-    const featuredPlaylist = playlistData[Math.floor(Math.random() * playlistData.length)];
+	const featuredPlaylist =
+		playlistData[Math.floor(Math.random() * playlistData.length)];
 
-    const playlistDivElement = document.createElement("div");
-    playlistDivElement.className = "playlist-card";
-    playlistDivElement.id = featuredPlaylist.playlistID;
+	const playlistDivElement = document.createElement("div");
+	playlistDivElement.className = "playlist-card";
+	playlistDivElement.id = featuredPlaylist.playlistID;
 
-    const playlistHeaderDiv = document.createElement("div");
-    playlistHeaderDiv.className = "playlist-header";
+	const playlistHeaderDiv = document.createElement("div");
+	playlistHeaderDiv.className = "playlist-header";
 
-    const headerImg = document.createElement("img");
+	const headerImg = document.createElement("img");
 	headerImg.src = featuredPlaylist.playlist_art || "assets/img/playlist.png";
 	playlistHeaderDiv.appendChild(headerImg);
 
@@ -84,7 +85,7 @@ function renderPlaylist() {
 		songCardWrapper.appendChild(songCard);
 	});
 
-    playlistDivElement.appendChild(songCardWrapper);
+	playlistDivElement.appendChild(songCardWrapper);
 
-    playlistContainer.appendChild(playlistDivElement);
+	playlistContainer.appendChild(playlistDivElement);
 }

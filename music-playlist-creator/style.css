@@ -18,7 +18,6 @@ header {
 header a {
 	text-decoration: none;
 	margin-right: 30px;
-
 }
 
 header a:hover {
@@ -228,7 +227,6 @@ img {
 	padding: 5px 0px;
 }
 
-
 #playlist-form {
 	display: flex;
 	flex-direction: row;
@@ -244,7 +242,7 @@ img {
 	cursor: pointer;
 	max-height: fit-content;
 	margin: 5px;
-	padding: 5px
+	padding: 5px;
 }
 
 .form-buttons {
@@ -257,5 +255,5 @@ img {
 	border: gray 1px solid;
 	border-radius: 5px;
 	padding: 10px;
-	margin:  10px;
+	margin: 10px;
 }

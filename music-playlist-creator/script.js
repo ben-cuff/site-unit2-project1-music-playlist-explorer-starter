@@ -15,28 +15,31 @@ function loadPlaylistsFromFile() {
 }
 
 function setupSortSelect() {
-	document.getElementById("sort-select").addEventListener("change", (event) => {
-		const sortBy = event.target.value;
-		if (sortBy === "name") {
-			// sorts alphabetically by playlist name
-			playlistData.sort((a, b) =>
-				a.playlist_name.localeCompare(b.playlist_name)
-			);
-		} else if (sortBy === "date") {
-			// sorts by date added (newest first)
-			playlistData.sort(
-				(a, b) => new Date(b.playlist_date) - new Date(a.playlist_date)
-			);
-		} else if (sortBy === "likes") {
-			// sorts by number of likes (most liked first)
-			playlistData.sort((a, b) => b.likes - a.likes);
-		} else {
-			// if no sort option is selected, reload the original data
-			loadPlaylistsFromFile();
-			return;
-		}
-		renderPlaylists();
-	});
+	document
+		.getElementById("sort-select")
+		.addEventListener("change", (event) => {
+			const sortBy = event.target.value;
+			if (sortBy === "name") {
+				// sorts alphabetically by playlist name
+				playlistData.sort((a, b) =>
+					a.playlist_name.localeCompare(b.playlist_name)
+				);
+			} else if (sortBy === "date") {
+				// sorts by date added (newest first)
+				playlistData.sort(
+					(a, b) =>
+						new Date(b.playlist_date) - new Date(a.playlist_date)
+				);
+			} else if (sortBy === "likes") {
+				// sorts by number of likes (most liked first)
+				playlistData.sort((a, b) => b.likes - a.likes);
+			} else {
+				// if no sort option is selected, reload the original data
+				loadPlaylistsFromFile();
+				return;
+			}
+			renderPlaylists();
+		});
 }
 
 function setupSearch() {
@@ -61,12 +64,14 @@ function setupSearch() {
 }
 
 function setupClearSearch() {
-	document.getElementById("clear-search-btn").addEventListener("click", (event) => {
-		event.preventDefault();
-		document.getElementById("search-input").value = "";
-		document.getElementById("search-filter").value = "name";
-		loadPlaylistsFromFile();
-	});
+	document
+		.getElementById("clear-search-btn")
+		.addEventListener("click", (event) => {
+			event.preventDefault();
+			document.getElementById("search-input").value = "";
+			document.getElementById("search-filter").value = "name";
+			loadPlaylistsFromFile();
+		});
 }
 
 function initApp() {
@@ -292,7 +297,7 @@ document.getElementById("add-song-btn").addEventListener("click", () => {
 
 document.getElementById("playlist-form").addEventListener("submit", (event) => {
 	event.preventDefault();
-	
+
 	const playlistName = document.getElementById("playlist-name").value.trim();
 	const playlistAuthor = document
 		.getElementById("playlist-author")
