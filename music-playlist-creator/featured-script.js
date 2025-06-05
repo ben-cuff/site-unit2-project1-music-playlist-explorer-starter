@@ -35,7 +35,7 @@ function renderPlaylist() {
 	playlistHeaderDiv.appendChild(headerImg);
 
 	const headerTextWrapper = document.createElement("div");
-	headerTextWrapper.classList.add("modal-header-text-wrapper");
+	headerTextWrapper.classList.add("header-text-wrapper");
 
 	const headerTitle = document.createElement("h3");
 	headerTitle.textContent = featuredPlaylist.playlist_name;

@@ -18,7 +18,6 @@ header {
 header a {
 	text-decoration: none;
 	margin-right: 30px;
-
 }
 
 header a:hover {
@@ -30,7 +29,7 @@ header a:hover {
 }
 
 .left {
-    margin-left: auto;
+	margin-left: auto;
 }
 
 footer {
@@ -41,6 +40,93 @@ footer {
 }
 
 .container {
-    display: flex;
-    flex-wrap: wrap;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding: 10px;
+}
+
+.playlist-card {
+	width: 80%;
+	margin: 10px auto;
+	padding: 10px;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	border-radius: 5px;
+}
+
+.playlist-header {
+	display: flex;
+	align-items: center;
+	width: 100%;
+}
+
+.playlist-header img {
+	height: auto;
+	border-radius: 5px;
+	width: 30%;
+	margin-right: 10px;
+}
+
+.header-text-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.song-card-wrapper {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	width: 100%;
+	gap: 10px;
+	margin-top: 10px;
+}
+
+.song-card img {
+	width: 25%;
+	height: auto;
+	border-radius: 5px;
+	margin-right: 8px;
+}
+
+.song-card {
+	display: flex;
+	margin-bottom: 10px;
+	border: 1px solid gray;
+	width: 30%;
+	box-sizing: border-box;
+	margin-right: 1%;
+	padding: 8px;
+	border-radius: 5px;
+}
+
+.song-card-text {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	padding-left: 8px;
+	font-size: 0.9em;
+}
+
+.song-card-text h4 {
+	margin: 0 0 5px 0;
+	font-size: 1em;
+}
+
+.song-card-text p {
+	margin: 2px 0;
+	font-size: 0.8em;
+	color: #555;
+}
+
+.shuffle-button {
+    padding: 10px 20px;
 }
