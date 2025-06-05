@@ -4,7 +4,7 @@ Submitted by: **Ben Cuff**
 
 Estimated time spent: **10** hours spent in total
 
-Deployed Application (**required**): [Music Playlist Explorer Deployed Site](ADD_LINK_HERE)
+Deployed Application (**required**): [Music Playlist Explorer Deployed Site](https://site-unit2-project1-music-playlist-0swx.onrender.com/)
 
 ### Application Features
 
