@@ -1,87 +1,32 @@
-let playlistData = [];
+function createSongCard(song) {
+	const songCard = document.createElement("div");
+	songCard.classList.add("song-card");
 
-function loadPlaylistsFromFile() {
-	fetch("data/data.json")
-		.then((response) => {
-			return response.json();
-		})
-		.then((data) => {
-			playlistData = data;
-			renderPlaylists();
-		})
-		.catch((error) => {
-			console.error("Unable to load playlists:", error);
-		});
-}
+	const songImg = document.createElement("img");
+	songImg.src = song.image || "assets/img/song.png";
+	songCard.appendChild(songImg);
 
-document.addEventListener("DOMContentLoaded", () => {
-	loadPlaylistsFromFile();
-});
+	const songCardText = document.createElement("div");
+	songCardText.classList.add("song-card-text");
 
-function renderPlaylists() {
-	const playlistContainer = document.getElementById("playlist-container");
-	playlistData.forEach((playlist) => {
-		const playlistDivElement = document.createElement("div");
-		playlistDivElement.className = "playlist-card";
-		playlistDivElement.id = playlist.playlistID;
+	const songTitle = document.createElement("h4");
+	songTitle.textContent = song.title;
+	songCardText.appendChild(songTitle);
 
-		const playlistImage = document.createElement("img");
-		playlistImage.src = playlist.playlist_art || "assets/img/playlist.png";
-		playlistDivElement.appendChild(playlistImage);
+	const songArtist = document.createElement("p");
+	songArtist.textContent = song.artist;
+	songCardText.appendChild(songArtist);
 
-		const playlistTitle = document.createElement("h2");
-		playlistTitle.textContent = playlist.playlist_name;
-		playlistDivElement.appendChild(playlistTitle);
+	const songAlbum = document.createElement("p");
+	songAlbum.textContent = song.album;
+	songCardText.appendChild(songAlbum);
 
-		const playlistAuthor = document.createElement("p");
-		playlistAuthor.textContent = playlist.playlist_author;
-		playlistDivElement.appendChild(playlistAuthor);
+	const duration = document.createElement("p");
+	duration.textContent = song.duration;
+	songCardText.appendChild(duration);
 
-		const likeButton = document.createElement("button");
-		likeButton.id = `like-button-${playlist.playlistID}`;
-		likeButton.dataset.liked = "false";
-
-		const likeCountSpan = document.createElement("span");
-		likeCountSpan.classList.add("like-count");
-		likeCountSpan.textContent = `Likes: ${playlist.likes}`;
-
-		likeButton.appendChild(likeCountSpan);
-		likeButton.addEventListener("click", (event) => {
-			event.stopPropagation();
-			toggleLike(event, playlist.playlistID);
-		});
-
-		const likeIcon = document.createElement("img");
-		likeIcon.src = "assets/img/heart-outline.svg";
-		likeIcon.className = "like-icon";
-		likeIcon.id = "like-icon-" + playlist.playlistID;
-		likeButton.appendChild(likeIcon);
-
-		playlistDivElement.appendChild(likeButton);
-
-		playlistContainer.appendChild(playlistDivElement);
-
-		playlistDivElement.addEventListener("click", () => {
-			renderModal(playlist);
-		});
-	});
-}
-
-function toggleLike(event, id) {
-	const button = event.currentTarget;
-	const likeCountSpan = button.querySelector(".like-count");
-	const currentLikes = parseInt(likeCountSpan.textContent.split(": ")[1]);
-	const isLiked = button.getAttribute("data-liked") === "true";
-	if (isLiked) {
-		button.setAttribute("data-liked", "false");
-		likeCountSpan.textContent = `Likes: ${currentLikes - 1}`;
-		document.getElementById("like-icon-" + id).src =
-			"assets/img/heart-outline.svg";
-	} else {
-		button.setAttribute("data-liked", "true");
-		likeCountSpan.textContent = `Likes: ${currentLikes + 1}`;
-		document.getElementById("like-icon-" + id).src = "assets/img/heart.svg";
-	}
+	songCard.appendChild(songCardText);
+	return songCard;
 }
 
 function renderModal(playlist) {
@@ -118,34 +63,7 @@ function renderModal(playlist) {
 	songCardWrapper.classList.add("song-card-wrapper");
 
 	playlist.songs.forEach((song) => {
-		const songCard = document.createElement("div");
-		songCard.classList.add("song-card");
-
-		const songImg = document.createElement("img");
-		songImg.src = song.image || "assets/img/song.png";
-		songCard.appendChild(songImg);
-
-		const songCardText = document.createElement("div");
-		songCardText.classList.add("song-card-text");
-
-		const songTitle = document.createElement("h4");
-		songTitle.textContent = song.title;
-		songCardText.appendChild(songTitle);
-
-		const songArtist = document.createElement("p");
-		songArtist.textContent = song.artist;
-		songCardText.appendChild(songArtist);
-
-		const songAlbum = document.createElement("p");
-		songAlbum.textContent = song.album;
-		songCardText.appendChild(songAlbum);
-
-		const duration = document.createElement("p");
-		duration.textContent = song.duration;
-		songCardText.appendChild(duration);
-
-		songCard.appendChild(songCardText);
-		songCardWrapper.appendChild(songCard);
+		songCardWrapper.appendChild(createSongCard(song));
 	});
 
 	modalContent.appendChild(songCardWrapper);
@@ -157,27 +75,7 @@ function renderModal(playlist) {
 		const shuffledSongs = playlist.songs.sort(() => Math.random() - 0.5);
 		songCardWrapper.innerHTML = "";
 		shuffledSongs.forEach((song) => {
-			const songCard = document.createElement("div");
-			songCard.classList.add("song-card");
-			const songImg = document.createElement("img");
-			songImg.src = song.image || "assets/img/song.png";
-			songCard.appendChild(songImg);
-			const songCardText = document.createElement("div");
-			songCardText.classList.add("song-card-text");
-			const songTitle = document.createElement("h4");
-			songTitle.textContent = song.title;
-			songCardText.appendChild(songTitle);
-			const songArtist = document.createElement("p");
-			songArtist.textContent = song.artist;
-			songCardText.appendChild(songArtist);
-			const songAlbum = document.createElement("p");
-			songAlbum.textContent = song.album;
-			songCardText.appendChild(songAlbum);
-			const duration = document.createElement("p");
-			duration.textContent = song.duration;
-			songCardText.appendChild(duration);
-			songCard.appendChild(songCardText);
-			songCardWrapper.appendChild(songCard);
+			songCardWrapper.appendChild(createSongCard(song));
 		});
 	});
 	modalContent.appendChild(shuffleButton);
