@@ -139,20 +139,20 @@ Deployed Application (**required**): [Music Playlist Explorer Deployed Site](htt
 
 * Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
 
-Add your response here
+I think they helped. I am already fairly familiar with html, css, and js but its been awhile since I've done it so vanilla. It may have helped to have some sort of guide on how to do the arrays in the forms.
 
 * If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
   
-Add your response here
+If I had more time, I would likely work on saving added playlists to the JSON and clean up the styles. It feels like I could've made things more modular to make it easier to go back and edit them later.
 
 * Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
-Add your response here
+One think that I notices went wrong is whenever I press the clear button, it gets rid of added playlists. While this doesn't break any of the specs given to us, it definitely isn't the best implementation of it.
 
 ### Open-source libraries used
 
-- Add any links to open-source libraries used in your project.
+- N/A
 
 ### Shout out
 
-Give a shout out to somebody from your cohort that especially helped you during your project. This can be a fellow peer, instructor, TA, mentor, etc.
+Shout out Theo, he helped me with making the video.
