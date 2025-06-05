@@ -16,7 +16,20 @@
 			<a href="featured.html">Featured</a>
 		</header>
 		<main class="container" id="playlist-container"></main>
+		<form id="playlist-form">
+			<input type="text" id="playlist-name" placeholder="Playlist Name" required />
+			<input type="text" id="playlist-author" placeholder="Author" required />
+			<input type="text" id="playlist-image" placeholder="Image URL or Path, Not required" />
 
+			<div id="songs-container">
+				<div class="song-input-group">
+					<input type="text" name="song-title[]" placeholder="Song Title" required />
+					<input type="text" name="song-artist[]" placeholder="Artist" required />
+				</div>
+			</div>
+			<button type="button" id="add-song-btn">Add Song</button>
+			<button type="submit">Create Playlist</button>
+		</form>
 		<footer></footer>
 		<script src="script.js"></script>
 	</body>

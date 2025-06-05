@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function renderPlaylists() {
 	const playlistContainer = document.getElementById("playlist-container");
+	playlistContainer.innerHTML = "";
 	playlistData.forEach((playlist) => {
 		const playlistDivElement = document.createElement("div");
 		playlistDivElement.className = "playlist-card";
@@ -180,3 +181,78 @@ function createSongCard(song) {
 	songCard.appendChild(songCardText);
 	return songCard;
 }
+
+document.getElementById("add-song-btn").addEventListener("click", () => {
+	const songsContainer = document.getElementById("songs-container");
+	const songInputGroup = document.createElement("div");
+	songInputGroup.classList.add("song-input-group");
+
+	const songTitleInput = document.createElement("input");
+	songTitleInput.type = "text";
+	songTitleInput.name = "song-title[]";
+	songTitleInput.placeholder = "Song Title";
+	songTitleInput.required = true;
+
+	const songArtistInput = document.createElement("input");
+	songArtistInput.type = "text";
+	songArtistInput.name = "song-artist[]";
+	songArtistInput.placeholder = "Artist";
+	songArtistInput.required = true;
+
+	songInputGroup.appendChild(songTitleInput);
+	songInputGroup.appendChild(songArtistInput);
+	songsContainer.appendChild(songInputGroup);
+});
+
+document.getElementById("playlist-form").addEventListener("submit", (event) => {
+	event.preventDefault();
+
+	const playlistName = document.getElementById("playlist-name").value.trim();
+	const playlistAuthor = document
+		.getElementById("playlist-author")
+		.value.trim();
+	const playlistImage = document
+		.getElementById("playlist-image")
+		.value.trim();
+
+	const songTitleInputs = document.querySelectorAll(
+		'input[name="song-title[]"]'
+	);
+	const songArtistInputs = document.querySelectorAll(
+		'input[name="song-artist[]"]'
+	);
+	const songs = [];
+
+	songTitleInputs.forEach((input, index) => {
+		const title = input.value.trim();
+		const artist = songArtistInputs[index].value.trim();
+
+		songs.push({
+			title: title,
+			artist: artist,
+			album: "",
+			duration: "",
+			image: "",
+		});
+	});
+
+	const newPlaylist = {
+		playlistID: "playlist-" + Date.now(),
+		playlist_name: playlistName,
+		playlist_author: playlistAuthor,
+		playlist_art: playlistImage,
+		likes: 0,
+		songs: songs,
+	};
+
+	playlistData.push(newPlaylist);
+	renderPlaylists();
+
+	event.target.reset();
+	document.getElementById("songs-container").innerHTML = `
+		<div class="song-input-group">
+			<input type="text" name="song-title[]" placeholder="Song Title" required />
+			<input type="text" name="song-artist[]" placeholder="Artist" required />
+		</div>
+	`;
+});
