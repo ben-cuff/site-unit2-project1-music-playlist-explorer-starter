@@ -24,7 +24,10 @@ document.addEventListener("DOMContentLoaded", () => {
 					a.playlist_name.localeCompare(b.playlist_name)
 				);
 			} else if (sortBy === "date") {
-				playlistData.sort((a, b) => new Date(b.playlist_date) - new Date(a.playlist_date));
+				playlistData.sort(
+					(a, b) =>
+						new Date(b.playlist_date) - new Date(a.playlist_date)
+				);
 			} else if (sortBy === "likes") {
 				playlistData.sort((a, b) => b.likes - a.likes);
 			} else {
@@ -33,6 +36,34 @@ document.addEventListener("DOMContentLoaded", () => {
 			}
 			renderPlaylists();
 		});
+
+	document.getElementById("search-btn").addEventListener("click", (event) => {
+		event.preventDefault();
+		const searchInput = document
+			.getElementById("search-input")
+			.value.trim()
+			.toLowerCase();
+		const filterType = document.getElementById("search-filter").value;
+		if (filterType === "name") {
+			playlistData = playlistData.filter((playlist) =>
+				playlist.playlist_name.toLowerCase().includes(searchInput)
+			);
+		} else if (filterType === "author") {
+			playlistData = playlistData.filter((playlist) => {
+				return playlist.playlist_author
+					.toLowerCase()
+					.includes(searchInput);
+			});
+		}
+		renderPlaylists();
+	});
+
+	document.getElementById("clear-search-btn").addEventListener("click", (event) => {
+		event.preventDefault();
+		document.getElementById("search-input").value = "";
+		document.getElementById("search-filter").value = "name";
+		loadPlaylistsFromFile();
+	});
 
 	loadPlaylistsFromFile();
 });
