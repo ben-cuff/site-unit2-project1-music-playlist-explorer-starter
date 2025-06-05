@@ -58,12 +58,14 @@ document.addEventListener("DOMContentLoaded", () => {
 		renderPlaylists();
 	});
 
-	document.getElementById("clear-search-btn").addEventListener("click", (event) => {
-		event.preventDefault();
-		document.getElementById("search-input").value = "";
-		document.getElementById("search-filter").value = "name";
-		loadPlaylistsFromFile();
-	});
+	document
+		.getElementById("clear-search-btn")
+		.addEventListener("click", (event) => {
+			event.preventDefault();
+			document.getElementById("search-input").value = "";
+			document.getElementById("search-filter").value = "name";
+			loadPlaylistsFromFile();
+		});
 
 	loadPlaylistsFromFile();
 });
@@ -205,6 +207,15 @@ function renderModal(playlist) {
 	});
 	modalContent.appendChild(shuffleButton);
 
+	const editButton = document.createElement("button");
+	editButton.classList.add("edit-button");
+	editButton.textContent = "Edit";
+	editButton.addEventListener("click", () => {
+		const editForm = createEditForm(playlist);
+		modalContent.appendChild(editForm);
+	});
+	modalContent.appendChild(editButton);
+
 	const closeButton = document.createElement("button");
 	closeButton.classList.add("close-button");
 	closeButton.textContent = "X";
@@ -323,3 +334,120 @@ document.getElementById("playlist-form").addEventListener("submit", (event) => {
 		</div>
 	`;
 });
+
+function createEditForm(playlist) {
+	const editForm = document.createElement("form");
+	editForm.classList.add("edit-form");
+	editForm.innerHTML = `
+		<label for="edit-playlist-name">Playlist Name:</label>
+		<input type="text" id="edit-playlist-name" value="${playlist.playlist_name}" required>
+		<label for="edit-playlist-author">Author:</label>
+		<input type="text" id="edit-playlist-author" value="${playlist.playlist_author}" required>
+		<label for="edit-playlist-image">Image URL:</label>
+		<input type="text" id="edit-playlist-image" value="${playlist.playlist_art}">
+		<button type="submit">Save</button>
+	`;
+
+	const songsContainer = document.createElement("div");
+	songsContainer.classList.add("edit-songs-container");
+
+	playlist.songs.forEach((song) => {
+		const songDiv = document.createElement("div");
+		songDiv.classList.add("edit-song-group");
+
+		const songTitleLabel = document.createElement("label");
+		songTitleLabel.textContent = "Song Title:";
+		songDiv.appendChild(songTitleLabel);
+
+		const songTitleInput = document.createElement("input");
+		songTitleInput.type = "text";
+		songTitleInput.name = "edit-song-title[]";
+		songTitleInput.value = song.title;
+		songTitleInput.required = true;
+		songDiv.appendChild(songTitleInput);
+
+		const songArtistLabel = document.createElement("label");
+		songArtistLabel.textContent = "Artist:";
+		songDiv.appendChild(songArtistLabel);
+
+		const songArtistInput = document.createElement("input");
+		songArtistInput.type = "text";
+		songArtistInput.name = "edit-song-artist[]";
+		songArtistInput.value = song.artist;
+		songArtistInput.required = true;
+		songDiv.appendChild(songArtistInput);
+
+		songsContainer.appendChild(songDiv);
+	});
+
+	editForm.appendChild(songsContainer);
+
+	editForm.addEventListener("submit", (e) => {
+		e.preventDefault();
+		playlist.playlist_name =
+			document.getElementById("edit-playlist-name").value;
+		playlist.playlist_author = document.getElementById(
+			"edit-playlist-author"
+		).value;
+		playlist.playlist_art = document.getElementById(
+			"edit-playlist-image"
+		).value;
+
+		const titleInputs = editForm.querySelectorAll(
+			'input[name="edit-song-title[]"]'
+		);
+		const artistInputs = editForm.querySelectorAll(
+			'input[name="edit-song-artist[]"]'
+		);
+		playlist.songs = [];
+		titleInputs.forEach((input, index) => {
+			const title = input.value.trim();
+			const artist = artistInputs[index].value.trim();
+			playlist.songs.push({
+				title: title,
+				artist: artist,
+				album: "",
+				duration: "",
+				image: "",
+			});
+		});
+
+		renderPlaylists();
+	});
+
+	editForm.addEventListener("submit", (e) => {
+		e.preventDefault();
+		playlist.playlist_name =
+			document.getElementById("edit-playlist-name").value;
+		playlist.playlist_author = document.getElementById(
+			"edit-playlist-author"
+		).value;
+		playlist.playlist_art = document.getElementById(
+			"edit-playlist-image"
+		).value;
+
+		const titleInputs = editForm.querySelectorAll(
+			'input[name="edit-song-title[]"]'
+		);
+		const artistInputs = editForm.querySelectorAll(
+			'input[name="edit-song-artist[]"]'
+		);
+
+		playlist.songs = [];
+		titleInputs.forEach((input, index) => {
+			const title = input.value;
+			const artist = artistInputs[index].value;
+			playlist.songs.push({
+				title: title,
+				artist: artist,
+				album: "",
+				duration: "",
+				image: "",
+			});
+		});
+
+		renderPlaylists();
+		renderModal(playlist);
+	});
+	return editForm;
+}
