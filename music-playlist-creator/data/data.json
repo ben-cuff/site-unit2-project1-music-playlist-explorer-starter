@@ -45,6 +45,7 @@
 		"playlist_author": "Jane Doe",
 		"playlist_art": "https://picsum.photos/300",
 		"likes": 120,
+		"playlist_date": "2023-01-25",
 		"songs": [
 			{
 				"title": "Losing My Religion",
