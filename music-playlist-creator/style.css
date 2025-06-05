@@ -178,3 +178,12 @@ img {
 	align-items: center;
 	display: inline-flex;
 }
+
+.sort-dropdown {
+	margin-left: auto;
+	padding: 5px;
+	border-radius: 5px;
+	border: 1px solid gray;
+	background-color: white;
+	font-size: 20px;
+}

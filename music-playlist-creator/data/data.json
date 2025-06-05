@@ -5,6 +5,7 @@
 		"playlist_author": "John Smith",
 		"playlist_art": "",
 		"likes": 150,
+		"playlist_date": "2023-01-15",
 		"songs": [
 			{
 				"title": "Smells Like Teen Spirit",
@@ -83,6 +84,7 @@
 		"playlist_author": "Alice Johnson",
 		"playlist_art": "",
 		"likes": 200,
+		"playlist_date": "2023-02-10",
 		"songs": [
 			{
 				"title": "Parklife",
@@ -161,6 +163,7 @@
 		"playlist_author": "Emily White",
 		"playlist_art": "",
 		"likes": 3,
+		"playlist_date": "2023-03-05",
 		"songs": [
 			{
 				"title": "Scarborough Fair",
@@ -200,6 +203,7 @@
 		"playlist_author": "Charlie Green",
 		"playlist_art": "",
 		"likes": 1020,
+		"playlist_date": "2023-04-20",
 		"songs": [
 			{
 				"title": "Time of My Life",

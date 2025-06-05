@@ -15,6 +15,25 @@ function loadPlaylistsFromFile() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+	document
+		.getElementById("sort-select")
+		.addEventListener("change", (event) => {
+			const sortBy = event.target.value;
+			if (sortBy === "name") {
+				playlistData.sort((a, b) =>
+					a.playlist_name.localeCompare(b.playlist_name)
+				);
+			} else if (sortBy === "date") {
+				playlistData.sort((a, b) => new Date(b.playlist_date) - new Date(a.playlist_date));
+			} else if (sortBy === "likes") {
+				playlistData.sort((a, b) => b.likes - a.likes);
+			} else {
+				loadPlaylistsFromFile();
+				return;
+			}
+			renderPlaylists();
+		});
+
 	loadPlaylistsFromFile();
 });
 
@@ -65,7 +84,9 @@ function renderPlaylists() {
 		deleteButton.textContent = "Delete";
 		deleteButton.addEventListener("click", (event) => {
 			event.stopPropagation();
-			const index = playlistData.findIndex((p) => p.playlistID === playlist.playlistID);
+			const index = playlistData.findIndex(
+				(p) => p.playlistID === playlist.playlistID
+			);
 			if (index !== -1) {
 				playlistData.splice(index, 1);
 				renderPlaylists();

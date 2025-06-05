@@ -8,23 +8,57 @@
 		<link rel="stylesheet" href="style.css" />
 	</head>
 	<body>
-		<div class="modal-container">
-		</div>
+		<div class="modal-container"></div>
 		<header>
 			<h1>Music Playlist Explorer</h1>
+			<div class="sort-dropdown">
+				<label for="sort-select">Sort by:</label>
+				<select id="sort-select">
+					<option value="none">None</option>
+					<option value="name">Alphabetical</option>
+					<option value="likes">Number of likes (decreasing order)</option>
+					<option value="date">
+						Date added (newest first)
+					</option>
+				</select>
+			</div>
 			<a href="index.html" class="active">Playlists</a>
 			<a href="featured.html">Featured</a>
 		</header>
 		<main class="container" id="playlist-container"></main>
 		<form id="playlist-form">
-			<input type="text" id="playlist-name" placeholder="Playlist Name" required />
-			<input type="text" id="playlist-author" placeholder="Author" required />
-			<input type="text" id="playlist-image" placeholder="Image URL or Path, Not required" />
+			<input
+				type="text"
+				id="playlist-name"
+				placeholder="Playlist Name"
+				required
+			/>
+			<input
+				type="text"
+				id="playlist-author"
+				placeholder="Author"
+				required
+			/>
+			<input
+				type="text"
+				id="playlist-image"
+				placeholder="Image URL or Path, Not required"
+			/>
 
 			<div id="songs-container">
 				<div class="song-input-group">
-					<input type="text" name="song-title[]" placeholder="Song Title" required />
-					<input type="text" name="song-artist[]" placeholder="Artist" required />
+					<input
+						type="text"
+						name="song-title[]"
+						placeholder="Song Title"
+						required
+					/>
+					<input
+						type="text"
+						name="song-artist[]"
+						placeholder="Artist"
+						required
+					/>
 				</div>
 			</div>
 			<button type="button" id="add-song-btn">Add Song</button>
