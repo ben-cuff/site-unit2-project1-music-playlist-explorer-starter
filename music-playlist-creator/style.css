@@ -195,10 +195,12 @@ img {
 .edit-button {
 	cursor: pointer;
 	margin-left: 10px;
+	max-height: fit-content;
 }
 
 .shuffle-button {
 	cursor: pointer;
+	max-height: fit-content;
 }
 
 .edit-button {
