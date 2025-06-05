@@ -152,7 +152,6 @@ img {
 	cursor: pointer;
 	width: 20px;
 	height: 20px;
-	margin-left: auto;
 }
 
 .close-button {
@@ -162,4 +161,20 @@ img {
 	font-size: 1.5em;
 	color: #aaa;
 	margin-left: auto;
+}
+
+.delete-button {
+	cursor: pointer;
+	background-color: transparent;
+	border: none;
+	display: inline-flex;
+	margin-left: auto;
+}
+
+.like-button {
+	cursor: pointer;
+	background-color: transparent;
+	border: none;
+	align-items: center;
+	display: inline-flex;
 }

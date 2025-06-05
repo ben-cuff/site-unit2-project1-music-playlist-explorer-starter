@@ -41,10 +41,11 @@ function renderPlaylists() {
 		const likeButton = document.createElement("button");
 		likeButton.id = `like-button-${playlist.playlistID}`;
 		likeButton.dataset.liked = "false";
+		likeButton.className = "like-button";
 
 		const likeCountSpan = document.createElement("span");
 		likeCountSpan.classList.add("like-count");
-		likeCountSpan.textContent = `Likes: ${playlist.likes}`;
+		likeCountSpan.textContent = `${playlist.likes}`;
 
 		likeButton.appendChild(likeCountSpan);
 		likeButton.addEventListener("click", (event) => {
@@ -57,8 +58,21 @@ function renderPlaylists() {
 		likeIcon.className = "like-icon";
 		likeIcon.id = "like-icon-" + playlist.playlistID;
 		likeButton.appendChild(likeIcon);
-
 		playlistDivElement.appendChild(likeButton);
+
+		const deleteButton = document.createElement("button");
+		deleteButton.className = "delete-button";
+		deleteButton.textContent = "Delete";
+		deleteButton.addEventListener("click", (event) => {
+			event.stopPropagation();
+			const index = playlistData.findIndex((p) => p.playlistID === playlist.playlistID);
+			if (index !== -1) {
+				playlistData.splice(index, 1);
+				renderPlaylists();
+			}
+		});
+
+		playlistDivElement.appendChild(deleteButton);
 
 		playlistContainer.appendChild(playlistDivElement);
 
@@ -71,16 +85,17 @@ function renderPlaylists() {
 function toggleLike(event, id) {
 	const button = event.currentTarget;
 	const likeCountSpan = button.querySelector(".like-count");
-	const currentLikes = parseInt(likeCountSpan.textContent.split(": ")[1]);
+	const currentLikes = parseInt(likeCountSpan.textContent);
 	const isLiked = button.getAttribute("data-liked") === "true";
+
 	if (isLiked) {
 		button.setAttribute("data-liked", "false");
-		likeCountSpan.textContent = `Likes: ${currentLikes - 1}`;
+		likeCountSpan.textContent = `${currentLikes - 1}`;
 		document.getElementById("like-icon-" + id).src =
 			"assets/img/heart-outline.svg";
 	} else {
 		button.setAttribute("data-liked", "true");
-		likeCountSpan.textContent = `Likes: ${currentLikes + 1}`;
+		likeCountSpan.textContent = `${currentLikes + 1}`;
 		document.getElementById("like-icon-" + id).src = "assets/img/heart.svg";
 	}
 }
