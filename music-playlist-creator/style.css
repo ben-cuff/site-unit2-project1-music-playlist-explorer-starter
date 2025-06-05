@@ -11,6 +11,23 @@ header {
 	padding-bottom: 5px;
 	border-bottom: black 1px solid;
 	background-color: bisque;
+	display: flex;
+	align-items: center;
+}
+
+header a {
+	text-decoration: none;
+	margin-right: 30px;
+
+}
+
+header a:hover {
+	text-decoration: underline;
+}
+
+.active {
+	margin-left: auto;
+	font-weight: bold;
 }
 
 .container {
@@ -135,5 +152,14 @@ img {
 	cursor: pointer;
 	width: 20px;
 	height: 20px;
+	margin-left: auto;
+}
+
+.close-button {
+	cursor: pointer;
+	background-color: transparent;
+	border: none;
+	font-size: 1.5em;
+	color: #aaa;
 	margin-left: auto;
 }

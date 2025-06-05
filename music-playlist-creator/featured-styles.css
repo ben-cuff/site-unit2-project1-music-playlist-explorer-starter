@@ -1,0 +1,46 @@
+body {
+	font-family: "Arial", sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #f8f8f8;
+}
+
+header {
+	padding-left: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-bottom: black 1px solid;
+	background-color: bisque;
+	display: flex;
+	align-items: center;
+}
+
+header a {
+	text-decoration: none;
+	margin-right: 30px;
+
+}
+
+header a:hover {
+	text-decoration: underline;
+}
+
+.active {
+	font-weight: bold;
+}
+
+.left {
+    margin-left: auto;
+}
+
+footer {
+	padding: 10px;
+	border-top: black 1px solid;
+	background-color: bisque;
+	display: flex;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}

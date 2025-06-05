@@ -117,40 +117,48 @@ function renderModal(playlist) {
 	const songCardWrapper = document.createElement("div");
 	songCardWrapper.classList.add("song-card-wrapper");
 
-	if (playlist.songs && Array.isArray(playlist.songs)) {
-		playlist.songs.forEach((song) => {
-			const songCard = document.createElement("div");
-			songCard.classList.add("song-card");
+	playlist.songs.forEach((song) => {
+		const songCard = document.createElement("div");
+		songCard.classList.add("song-card");
 
-			const songImg = document.createElement("img");
-			songImg.src = song.image || "assets/img/song.png";
-			songCard.appendChild(songImg);
+		const songImg = document.createElement("img");
+		songImg.src = song.image || "assets/img/song.png";
+		songCard.appendChild(songImg);
 
-			const songCardText = document.createElement("div");
-			songCardText.classList.add("song-card-text");
+		const songCardText = document.createElement("div");
+		songCardText.classList.add("song-card-text");
 
-			const songTitle = document.createElement("h4");
-			songTitle.textContent = song.title;
-			songCardText.appendChild(songTitle);
+		const songTitle = document.createElement("h4");
+		songTitle.textContent = song.title;
+		songCardText.appendChild(songTitle);
 
-			const songArtist = document.createElement("p");
-			songArtist.textContent = song.artist;
-			songCardText.appendChild(songArtist);
+		const songArtist = document.createElement("p");
+		songArtist.textContent = song.artist;
+		songCardText.appendChild(songArtist);
 
-			const songAlbum = document.createElement("p");
-			songAlbum.textContent = song.album;
-			songCardText.appendChild(songAlbum);
+		const songAlbum = document.createElement("p");
+		songAlbum.textContent = song.album;
+		songCardText.appendChild(songAlbum);
 
-			const duration = document.createElement("p");
-			duration.textContent = song.duration;
-			songCardText.appendChild(duration);
+		const duration = document.createElement("p");
+		duration.textContent = song.duration;
+		songCardText.appendChild(duration);
 
-			songCard.appendChild(songCardText);
-			songCardWrapper.appendChild(songCard);
-		});
-	}
+		songCard.appendChild(songCardText);
+		songCardWrapper.appendChild(songCard);
+	});
 
 	modalContent.appendChild(songCardWrapper);
+
+	const closeButton = document.createElement("button");
+	closeButton.classList.add("close-button");
+	closeButton.textContent = "X";
+	closeButton.addEventListener("click", () => {
+		modalContainer.innerHTML = "";
+	});
+
+	modalContent.appendChild(closeButton);
+
 	modalDiv.appendChild(modalContent);
 	modalContainer.appendChild(modalDiv);
 }
