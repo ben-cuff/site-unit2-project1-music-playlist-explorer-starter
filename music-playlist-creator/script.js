@@ -225,6 +225,7 @@ function renderModal(playlist) {
 	editButton.textContent = "Edit";
 	editButton.addEventListener("click", () => {
 		const editForm = createEditForm(playlist);
+		editButton.disabled = true;
 		modalContent.appendChild(editForm);
 	});
 	modalContent.appendChild(editButton);
