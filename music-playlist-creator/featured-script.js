@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function renderPlaylist() {
     const playlistContainer = document.getElementById("featured-container");
 
+	// picks a random playlist from the playlistData array
     const featuredPlaylist = playlistData[Math.floor(Math.random() * playlistData.length)];
 
     const playlistDivElement = document.createElement("div");
@@ -51,6 +52,7 @@ function renderPlaylist() {
 	const songCardWrapper = document.createElement("div");
 	songCardWrapper.classList.add("song-card-wrapper");
 
+	// renders each song in the featured playlist
 	featuredPlaylist.songs.forEach((song) => {
 		const songCard = document.createElement("div");
 		songCard.classList.add("song-card");
