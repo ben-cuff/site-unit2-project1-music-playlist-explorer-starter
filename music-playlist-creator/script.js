@@ -335,6 +335,7 @@ document.getElementById("playlist-form").addEventListener("submit", (event) => {
 			album: "",
 			duration: "",
 			image: "",
+			date: new Date().toISOString(),
 		});
 	});
 
