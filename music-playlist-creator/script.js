@@ -335,7 +335,6 @@ document.getElementById("playlist-form").addEventListener("submit", (event) => {
 			album: "",
 			duration: "",
 			image: "",
-			date: new Date().toISOString(),
 		});
 	});
 
@@ -344,6 +343,7 @@ document.getElementById("playlist-form").addEventListener("submit", (event) => {
 		playlist_name: playlistName,
 		playlist_author: playlistAuthor,
 		playlist_art: playlistImage,
+		playlist_date: new Date().toISOString(),
 		likes: 0,
 		songs: songs,
 	};
